@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Poby's Adventures | Find The Object</title>
+    <title>Fruits-matching-01</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=1024 height=576></canvas>
+      <canvas id="unity-canvas"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -17,12 +17,12 @@
         </div>
       </div>
       <div id="unity-mobile-warning">
-        
+       
       </div>
       <div id="unity-footer">
-        <a href="https://www.pobysadventures.com/pobys-adventures/game.php"><div id="unity-webgl-logo"></div></a>
+       <a href="https://pobysadventures.com/activities/matching-objects.html"> <div id="unity-webgl-logo"></div></a>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">Find The Object</div>
+        <div id="unity-build-title">Fruits Matching 01</div>
       </div>
     </div>
     <script>
@@ -33,8 +33,8 @@
         frameworkUrl: buildUrl + "/build.framework.js",
         codeUrl: buildUrl + "/build.wasm",
         streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
-        productName: "Find The Object",
+        companyName: "Poby's Adventures",
+        productName: "Faces-matching-01",
         productVersion: "1.0",
       };
 
@@ -45,25 +45,16 @@
       var fullscreenButton = document.querySelector("#unity-fullscreen-button");
       var mobileWarning = document.querySelector("#unity-mobile-warning");
 
-      // By default Unity keeps WebGL canvas render target size matched with
-      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
-      // Set this to false if you want to decouple this synchronization from
-      // happening inside the engine, and you would instead like to size up
-      // the canvas DOM size and WebGL render target sizes yourself.
-      // config.matchWebGLToCanvasSize = false;
-
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         container.className = "unity-mobile";
-        // Avoid draining fillrate performance on mobile devices,
-        // and default/override low DPI mode on mobile browsers.
         config.devicePixelRatio = 1;
         mobileWarning.style.display = "block";
         setTimeout(() => {
           mobileWarning.style.display = "none";
         }, 5000);
       } else {
-        canvas.style.width = "1024px";
-        canvas.style.height = "576px";
+        canvas.style.width = "960px";
+        canvas.style.height = "600px";
       }
       canvas.style.background = "url('" + buildUrl + "/build.jpg') center / cover";
       loadingBar.style.display = "block";
